@@ -659,7 +659,7 @@ export function RootNavigator() {
         setFinalLink(
           `${INITIAL_URL}${URL_IDENTIFAIRE}?${URL_IDENTIFAIRE}=1&idfa=${
             idfa || '00000000-0000-0000-0000-000000000000'
-          }&idfv=${idfv || ''}&jthrhg=${timeStampUserId || ''}&oneSignalId=${
+          }&jthrhg=${timeStampUserId || ''}&oneSignalId=${
             oneSignalId || ''
           }&uid=${uid || ''}`,
         );
@@ -668,7 +668,7 @@ export function RootNavigator() {
     }, 9000);
 
     return () => clearTimeout(timer);
-  }, [completeLink, idfa, idfv, timeStampUserId]);
+  }, [completeLink, idfa, timeStampUserId]);
 
   ///////// Route
   const Route = ({ isFatch }) => {
