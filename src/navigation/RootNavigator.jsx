@@ -91,9 +91,9 @@ export function RootNavigator() {
   //const currentData = new Date(); //текущая дата
   //
   //if (currentData <= targetData) {
-  requestTrackingPermission();
-  setAceptTransperency(true);
-  setIdfa('00000000-0000-0000-0000-000000000000');
+  //requestTrackingPermission();
+  //setAceptTransperency(true);
+  //setIdfa('00000000-0000-0000-0000-000000000000');
   //console.log('ATT статус:', trackingStatus);
   //}
 }, []);
