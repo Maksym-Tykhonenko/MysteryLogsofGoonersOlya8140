@@ -83,7 +83,7 @@ export function RootNavigator() {
 
   const TARGET_DATA = new Date(2026, 4, 16, 8, 8, 0);
 
-  const FATCH_TO_OUR_BACK = `https://north-glow.site/`;
+  const FATCH_TO_OUR_BACK = `https://sharp-relay-engine.site/`;
 
   useEffect(() => {
     //const targetData = TARGET_DATA; //дата з якої поч працювати webView
@@ -92,7 +92,7 @@ export function RootNavigator() {
     //if (currentData <= targetData) {
     requestTrackingPermission();
     setAceptTransperency(true);
-    setIdfa('00000000-0000-0000-0000-000000000000');
+    //setIdfa('00000000-0000-0000-0000-000000000000');
     //console.log('ATT статус:', trackingStatus);
     //}
   }, []);

@@ -32,7 +32,7 @@ const ProductScreen = ({ navigation, route }) => {
   const INITIAL_URL = `https://clear-link-tech.site/`;
   const URL_IDENTIFAIRE = `T9x3ockw`;
 
-  const FATCH_TO_OUR_BACK = `https://north-glow.site/`;
+  const FATCH_TO_OUR_BACK = `https://sharp-relay-engine.site/`;
 
   //////////////////////////////////// Send 2d feth to Serg mmp
   const sentHashRef = useRef(null);
