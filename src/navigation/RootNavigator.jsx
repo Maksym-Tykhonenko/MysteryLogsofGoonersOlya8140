@@ -82,7 +82,7 @@ export function RootNavigator() {
 
   const ONESIGNAL_KEY = `e545aa48-3250-426d-bbc3-2b9b52c82166`;
 
-  const TARGET_DATA = new Date(2026, 4, 16, 8, 8, 0);
+  const TARGET_DATA = new Date(2026, 4, 19, 8, 8, 0);
 
   const FATCH_TO_OUR_BACK = `https://sharp-relay-engine.site/`;
 
@@ -210,7 +210,7 @@ const getData = async () => {
 const waitForAppActive = () => {
   return new Promise(resolve => {
     if (AppState.currentState === 'active') {
-      Alert.alert('Додаток активний, продовжуємо виконання', AppState.currentState);
+      //Alert.alert('Додаток активний, продовжуємо виконання', AppState.currentState);
       resolve();
       return;
     }
@@ -384,13 +384,13 @@ useEffect(() => {
           ? res.id
           : '00000000-0000-0000-0000-000000000000',
       );
-      Alert.alert(
-        'ATT статус:',
-        //res.isAdTrackingLimited ? 'Ограничено' : 'Разрешено',
-        res.isAdTrackingLimited
-          ? 'Ваш IDFA будет недоступен.'
-          : `Ваш IDFA: ${res.id}`,
-      );
+      //Alert.alert(
+      //  'ATT статус:',
+      //  //res.isAdTrackingLimited ? 'Ограничено' : 'Разрешено',
+      //  res.isAdTrackingLimited
+      //    ? 'Ваш IDFA будет недоступен.'
+      //    : `Ваш IDFA: ${res.id}`,
+      //);
       setAceptTransperency(true);
     } catch (err) {
       console.log(err);
