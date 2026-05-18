@@ -33,7 +33,7 @@ import {
   getTrackingStatus,
   requestTrackingPermission,
 } from 'react-native-tracking-transparency';
-import { Alert } from 'react-native';
+import { Alert, AppState } from 'react-native';
 import ReactNativeIdfaAaid, {
   AdvertisingInfoResponse,
 } from '@moxspoy/react-native-idfa-aaid';
@@ -185,6 +185,8 @@ const getData = async () => {
       const uniqueId = await DeviceInfo.getUniqueId();
       setIdfv(uniqueId);
 
+      await waitForAppActive();
+      await delay(1200);
       await fetchIdfa();
 
       gettingExtInfo();
@@ -201,6 +203,25 @@ const getData = async () => {
   } catch (e) {
     //console.log('Помилка отримання даних в getData:', e);
   }
+};
+  
+  const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
+
+const waitForAppActive = () => {
+  return new Promise(resolve => {
+    if (AppState.currentState === 'active') {
+      Alert.alert('Додаток активний, продовжуємо виконання', AppState.currentState);
+      resolve();
+      return;
+    }
+
+    const sub = AppState.addEventListener('change', state => {
+      if (state === 'active') {
+        sub.remove();
+        resolve();
+      }
+    });
+  });
 };
 
 const setData = async () => {
@@ -667,7 +688,7 @@ useEffect(() => {
       );
       setCompleteLink(true);
     }
-  }, 9000);
+  }, 10500);
 
   return () => clearTimeout(timer);
 }, [completeLink, idfa, timeStampUserId]);
@@ -712,7 +733,7 @@ useEffect(() => {
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(true);
-    }, 5000);
+    }, 6500);
   }, []);
 
   return (
